@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 
 app.get("/", function (req, res) {
 
-	res.sendFile(__dirname+"/index.html");
 	console.log("server is running");
 	res.sendFile(__dirname+"/index.html");
   });
