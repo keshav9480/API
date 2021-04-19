@@ -31,8 +31,8 @@ app.post("/", function(req, res){
 			console.log("Temparture at "+weatherData.name+" "+weatherData.main.temp);
 			console.log("Description: "+weatherData.weather[0].description);
 			console.log("longitude: "+weatherData.coord.lon+" latitude: "+weatherData.coord.lat);
-			res.send("<h1>Temparture at city: "+city+" - "+weatherData.main.temp+" celcius - "+weatherData.weather[0].description+" co-ordinates longitude:"+weatherData.coord.lon+" latitude: "+weatherData.coord.lat+"</h1>")
 			//res.write("<h1>Temparture at Manvi "+weatherData.main.temp+" - "+weatherData.weather[0].description+ "</h1>");
+			res.send("<h1>Temparture at city: "+city+" - "+weatherData.main.temp+" celcius - "+weatherData.weather[0].description+" co-ordinates longitude:"+weatherData.coord.lon+" latitude: "+weatherData.coord.lat+"</h1>")
 			});
 		}
 	});
