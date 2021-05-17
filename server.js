@@ -6,7 +6,6 @@ const app = express();
 const bodyParser = require('body-parser');
 
 app.get("/", function (req, res) {
-
 	console.log("server is running");
 	res.sendFile(__dirname+"/index.html");
   });
@@ -26,12 +25,10 @@ app.post("/", function(req, res){
 		}else{
 			response.on('data', (data) => {
 			console.log(data);
-			//process.stdout.write(data);
 			const weatherData = JSON.parse(data);
 			console.log("Temparture at "+weatherData.name+" "+weatherData.main.temp);
 			console.log("Description: "+weatherData.weather[0].description);
 			console.log("longitude: "+weatherData.coord.lon+" latitude: "+weatherData.coord.lat);
-			//res.write("<h1>Temparture at Manvi "+weatherData.main.temp+" - "+weatherData.weather[0].description+ "</h1>");
 			res.send("<h1>Temparture at city: "+city+" - "+weatherData.main.temp+" celcius - "+weatherData.weather[0].description+" co-ordinates longitude:"+weatherData.coord.lon+" latitude: "+weatherData.coord.lat+"</h1>")
 			});
 		}
